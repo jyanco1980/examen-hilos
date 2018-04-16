@@ -33,13 +33,10 @@ public class ExamenTest {
 	/**
 	 * 1 Test 
 	 * 
-	 * Se envia a procesar un lote de 10 llamadas concurrentes.
+	 * Se envia a procesar 10 llamdas de forma concurrente en modalidad lote.
 	 * 7 llamadas son tomadas por los 7 Operadores, 2 por los 2 supervisores y una por el director.
-	 * Se confirma que las 10 llamadas son procesadas (ninguna "no procesada") en forma concurrente con un solo llamado a la central telefonica. 
+	 * Se confirma que las 10 llamadas son procesadas (ninguna queda en "no procesada") en forma concurrente. 
 	 *	
-	 * Se confirma que las 5 primeras llamadas son resuelta por los empleados del tipo Operador.
-	 * las 2 siguientes llamadas por los Supervisores y la ultima llamada por el Director. (orden solicitado por requerimiento). 
-	 * 
 	 * Verifica:
 	 *  	"Tener la capacidad de poder procesar 10 llamadas al mismo tiempo (de modo concurrente)"
 	 * 		"Debe tener un test unitario donde lleguen 10 llamadas"
@@ -88,6 +85,7 @@ public class ExamenTest {
 		assertEquals(centralTelefonica.getLlamadasProcesadas().poll().getNombreEmpleadoAtendio(), "Operador_1");
 		assertEquals(Retenciones.getSingletonInstance().getLlamadasNoProcesadas().size(),0);
 	}
+	
 
 	/**
 	 * Test 3
@@ -106,7 +104,7 @@ public class ExamenTest {
 	 * Se comprueba que 5 llamadas son "no procesadas" y 10 Procesadas.
 	 * 
 	 * Verifica:
-	 * 		Dar alguna solución sobre qué pasa con una llamada cuando entran más de 10 llamadas concurrentes
+	 * 		Dar alguna solución sobre qué pasa con una llamada cuando entran más de 10 llamadas concurrentes (lote)
 	 * 		Debe tener un test unitario donde lleguen 10 llamadas
 	 *  	Dar alguna solución sobre qué pasa con una llamada cuando no hay ningún empleado libre
 	 */
@@ -132,7 +130,10 @@ public class ExamenTest {
 	 * Se verifica que a pesar de disponer solo de 10 empleados, las 20 llamadas son atendidas quedando ninguna como "no procesada". 
 	 * 
 	 * Verifica
-	 * El método dispatchCall puede invocarse por varios hilos al mismo tiempo
+	 * 	El método dispatchCall puede invocarse por varios hilos al mismo tiempo
+	 * 	Tener la capacidad de poder procesar 10 llamadas al mismo tiempo (de modo concurrente)
+	 *  Dar alguna solución sobre qué pasa con una llamada cuando no hay ningún empleado libre
+	 *  Dar alguna solución sobre qué pasa con una llamada cuando entran más de 10 llamadas concurrentes (distintos hilos)
 	 * 
 	 * @throws Exception
 	 */
