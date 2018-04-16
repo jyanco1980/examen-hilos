@@ -14,8 +14,8 @@ Lo realizado resuelve los puntos principales como así también los "extras"
 	en tema (antes de resolver la llamada) y los supervisores la penalidad es de 1segundo.
 	Como el random de atención varia de 5 a 8 segundos queda definido asi:
 		Los Operadores demoraran en resolver una llamada entre 5 a 8 segundos.
-		Los Supervidores entre 5 y 9 segundos.
-		Los Directores de 5 a 10 segundos.
+		Los Supervidores entre 6 y 9 segundos.
+		Los Directores de 7 a 10 segundos.
 	
 	La cantidad de Empleados (operadores/supervisores/directores) puede ser menor a 10, por ende la de llamadas
 	que se atiendan en forma paralela/concurrente dependerá de la cantidad de llamadas y la de empleados. 
